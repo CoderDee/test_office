@@ -159,7 +159,7 @@ h6 {
 	display: flex;
 	flex-direction: column;
 	max-width: 50vw;
-	padding-bottom: 1vw;
+	padding-top: 43vh;
 }
 
 .banner .logo_body .logo_title h1 {
@@ -1156,8 +1156,76 @@ hr.style1 {
 	}
 }
 
+/* container_card_book-=============================== */
+.container_card_book{
+	max-width: 1214px;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
-/*teams */
+.card_book{
+	position: relative;
+    margin: 20px 0;
+    width: 300px;
+    height: 400px;
+    background: #fff;
+    transform-style: preserve-3d;
+    transform: perspective(2000px);
+    transition: 1s;
+    box-shadow: inset 300px 0 50px rgba(0,0, 0,.5);
+}
+
+.card_book:hover{
+	z-index: 1000px;
+    transform: perspective(2000px) rotate(-10deg);
+    box-shadow: inset 20px 0 50px rgba(0,0, 0,.5);
+}
+
+.imgBox_book{
+	position: relative;
+    width: 100%;
+    height: 100%;
+    border:  1px solid #000;
+    transform-origin: left;
+    z-index: 1;
+    transition: 1s;
+}
+
+.card_book:hover .imgBox_book{
+	transform: rotateY(-135deg);
+}
+
+.imgBox_book img{
+	position: absolute;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+  	height: 100%;
+  	object-fit: cover;
+}
+
+.detailes_book{
+	position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+	padding: 20px;
+}
+
+.detailes_book h2{
+	font-size: 30px;
+	font-family: serif;
+	padding-bottom: 20px;
+}
+
+.detailes_book p{
+	font-size: 20px;
+	font-family: serif;
+}
+
+/*teams =============================================== */
 
 .teams {
 	background-color: #f3f2e7;
@@ -1563,13 +1631,13 @@ padding-bottom: 20px;
   opacity:0;
 }
 .console-container {
-    font-size: 3em;
+    font-size: 4em;
     height: 200px;
     width: 600px;
     display: block;
     position: absolute;
     color: white;
-    top: 13em;
+    top: -2em;
     bottom: 0;
     left: 0;
     right: 0;
