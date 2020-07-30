@@ -158,14 +158,13 @@ h6 {
 .banner .logo_body {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
 	max-width: 50vw;
 	padding-bottom: 1vw;
 }
 
 .banner .logo_body .logo_title h1 {
 	color: #f6f9fa;
-	font-size: calc(40px + 20 * ((100vw - 320px) / (1214 - 320)));
+	font-size: calc(50px + 10 * ((100vw - 320px) / (1214 - 320)));
 	line-height: 0.9em;
 	letter-spacing: 0.48px;
 	padding: 0 0 10vh 0;
@@ -180,33 +179,15 @@ h6 {
 
 
 @media (max-width: 1024px) {
-	.logo {
-		padding-bottom: 2vh;
-	}
-	.logo_body {
-		margin: 0 auto;
-	}
+
 }
 
 @media (max-width: 568px) {
 	.banner .logo_body .logo_title h1 {
 		padding: 0 0 2vh 0;
-		font-size: 37px;
 	}
 	.banner .logo_body .logo_itm .button {
 		margin-top: 8vh;
-	}
-}
-
-@media (max-width: 411px) {
-	.logo_itm {
-		line-height: 157%;
-	}
-	.logo_title h1 {
-		padding: 0 0 8vw 0;
-	}
-	.logo_title h1 {
-		font-size: 40px;
 	}
 }
 
@@ -214,11 +195,17 @@ h6 {
 	.banner .logo {
 		padding: 1vh 0 2vh 0;
 	}
+	.banner .logo_body{
+		/* width: 70%; */
+	}
 }
 
-@media (max-height: 375px) {
+@media (max-width: 375px) {
 	.banner .logo {
 		padding: 1vh 0 2vh 0;
+	}
+	.banner .logo_body {
+		max-width: 85vw;
 	}
 	.banner .logo_body .logo_title h1 {
 		padding: 0px 0 3vh 0;
@@ -795,6 +782,78 @@ transform-style: preserve-3d;
 	}
 }
 
+/* container_box-============================================== */
+.container_cards{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+	padding: 30px;
+	margin-top: 50px;
+	background-color: #f3f2e7;
+	border-radius: 20px;
+}
+.card_box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 329px;
+    height: 170px;
+    background: rgb(230, 40, 40);
+    margin: 30px 10px;
+    padding: 20px 15px;
+    transition: 0.3s ease-in-out;
+}
+
+.card_box:hover{
+    height: 420px;
+}
+
+.imgbox {
+    position: relative;
+    top: -60px;
+    left: 20px;
+    width: 260px;
+    height: 172px;
+    box-shadow: 0 5px 202px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.imgbox img{
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.content_box{
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+	color: #FFF;
+    visibility: hidden;
+    opacity: 0;
+	transition: 0.3s ease-in-out;
+	font-family: serif;
+}
+
+.content_box h2{
+	font-size: 30px;
+	padding-bottom: 10px;
+}
+
+.content_box p{
+	font-size: 20px;
+}
+
+.card_box:hover .content_box{
+	visibility: visible;
+    opacity: 1;
+    margin-top:-40px;
+    transition-delay: 0.3s;
+}
+
+/* minds==================================================== */
 .minds {
 	background-color: #fff;
 	margin: 20px 0;
@@ -1311,8 +1370,100 @@ img {
 	}
 }
 
+/* city========================================= */
 
-/* slider */
+.city_body{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.city{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transform-style: preserve-3d;
+    width: 1100px;
+}
+
+.city_card{
+	position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 20px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.city_card_box{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transition: 1s ease;
+}
+
+.city_card:hover .city_card_box{
+	transform: rotateY(180deg);
+}
+
+.city_card_box .city_card_imgBx{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.city_card_imgBx img{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.city_card_contentBx{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
+
+.city_card_contentBx div{
+	transform-style: preserve-3d;
+    padding: 20px;
+    background: linear-gradient(45deg, #fe0061,#ffeb3b );
+    transform: translateZ(100px);
+}
+
+.city_card_contentBx div h2{
+	color: #fff;
+font-size: 20px;
+letter-spacing: normal;
+padding-bottom: 20px;
+}
+
+.city_card_contentBx div p{
+	color: #fff;
+    font-size: 16px;
+    letter-spacing: normal;
+}
+
+/* slider ======================================= */
 
 .slider_block {
 	height: 122vh;
